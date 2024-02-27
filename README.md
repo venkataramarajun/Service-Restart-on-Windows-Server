@@ -1,4 +1,4 @@
-# Service-Restart-on-Windows-Service
+# Service-Restart-on-Windows-Server
 A PowerShell script to restart multiple services on windows server
 
 
