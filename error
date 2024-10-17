@@ -1,95 +1,98 @@
-[2024-10-17T22:50:43.656Z] Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-[2024-10-17T22:50:43.656Z] Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-[2024-10-17T22:50:43.718Z] Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
-[2024-10-17T22:50:43.742Z] The recommended git tool is: NONE
-[2024-10-17T22:50:43.742Z] using credential ps590443_token
-[2024-10-17T22:50:43.773Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
-[2024-10-17T22:50:43.795Z] Fetching changes from the remote Git repository
-[2024-10-17T22:50:43.819Z]  > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
-[2024-10-17T22:50:43.860Z] Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
-[2024-10-17T22:50:43.860Z]  > git --version # timeout=10
-[2024-10-17T22:50:43.868Z]  > git --version # 'git version 2.39.2'
-[2024-10-17T22:50:43.868Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-[2024-10-17T22:50:43.949Z]  > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-[2024-10-17T22:50:44.452Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-[2024-10-17T22:50:44.472Z] Checking out Revision b7868c839153f1bf09ea9ab63b71399895c279c2 (refs/remotes/origin/main)
-[2024-10-17T22:50:44.473Z]  > git config core.sparsecheckout # timeout=10
-[2024-10-17T22:50:44.484Z]  > git checkout -f b7868c839153f1bf09ea9ab63b71399895c279c2 # timeout=10
-[2024-10-17T22:50:44.618Z] Commit message: "Update Platform-SelfService.Jenkinsfile"
-[2024-10-17T22:50:44.621Z]  > git rev-list --no-walk 662e90c08ea0fe517b5e23d85f623dac8fe38382 # timeout=10
-[2024-10-17T22:50:44.769Z] Loading library shared-library@rds-restart
-[2024-10-17T22:50:44.769Z] Attempting to resolve rds-restart from remote references...
-[2024-10-17T22:50:44.769Z]  > git --version # timeout=10
-[2024-10-17T22:50:44.781Z]  > git --version # 'git version 2.39.2'
-[2024-10-17T22:50:44.781Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-[2024-10-17T22:50:44.787Z]  > git ls-remote -h -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
-[2024-10-17T22:50:44.916Z] Found match: refs/heads/rds-restart revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc
-[2024-10-17T22:50:44.938Z] The recommended git tool is: NONE
-[2024-10-17T22:50:44.938Z] using credential ps590443_token
-[2024-10-17T22:50:44.967Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@libs/65c1208ccf758665cbba85a4466820bb0255f980af8470c3b7cf4cd5d1aeebbb/.git # timeout=10
-[2024-10-17T22:50:44.977Z] Fetching changes from the remote Git repository
-[2024-10-17T22:50:45.000Z]  > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
-[2024-10-17T22:50:45.038Z] Fetching without tags
-[2024-10-17T22:50:45.038Z] Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git
-[2024-10-17T22:50:45.038Z]  > git --version # timeout=10
-[2024-10-17T22:50:45.045Z]  > git --version # 'git version 2.39.2'
-[2024-10-17T22:50:45.045Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-[2024-10-17T22:50:45.124Z]  > git fetch --no-tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-[2024-10-17T22:50:45.440Z] Checking out Revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc (rds-restart)
-[2024-10-17T22:50:45.440Z]  > git config core.sparsecheckout # timeout=10
-[2024-10-17T22:50:45.452Z]  > git checkout -f 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
-[2024-10-17T22:50:45.540Z] Commit message: "Update extractSchedule.groovy"
-[2024-10-17T22:50:45.543Z]  > git rev-list --no-walk 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
-[2024-10-17T22:50:46.337Z] [Pipeline] Start of Pipeline
-[2024-10-17T22:50:46.592Z] [Pipeline] node
-[2024-10-17T22:50:46.725Z] Running on ghs-jenkins-agent-01 in /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
-[2024-10-17T22:50:46.753Z] [Pipeline] {
-[2024-10-17T22:50:46.882Z] [Pipeline] stage
-[2024-10-17T22:50:46.907Z] [Pipeline] { (Declarative: Checkout SCM)
-[2024-10-17T22:50:47.040Z] [Pipeline] checkout
-[2024-10-17T22:50:47.100Z] The recommended git tool is: NONE
-[2024-10-17T22:50:47.106Z] using credential ps590443_token
-[2024-10-17T22:50:47.139Z] Fetching changes from the remote Git repository
-[2024-10-17T22:50:47.369Z] Checking out Revision b7868c839153f1bf09ea9ab63b71399895c279c2 (refs/remotes/origin/main)
-[2024-10-17T22:50:47.377Z] Commit message: "Update Platform-SelfService.Jenkinsfile"
-[2024-10-17T22:50:47.447Z] [Pipeline] }
-[2024-10-17T22:50:47.559Z] [Pipeline] // stage
-[2024-10-17T22:50:47.670Z] [Pipeline] withEnv
-[2024-10-17T22:50:47.696Z] [Pipeline] {
-[2024-10-17T22:50:47.831Z] [Pipeline] withCredentials
-[2024-10-17T22:50:47.885Z] Masking supported pattern matches of $JENKINS_TOKEN or $JENKINS_TOKEN_PSW
-[2024-10-17T22:50:47.913Z] [Pipeline] {
-[2024-10-17T22:50:48.020Z] [Pipeline] stage
-[2024-10-17T22:50:48.047Z] [Pipeline] { (Read YAML)
-[2024-10-17T22:50:47.136Z]  > git rev-parse --resolve-git-dir /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/.git # timeout=10
-[2024-10-17T22:50:47.142Z]  > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
-[2024-10-17T22:50:47.146Z] Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
-[2024-10-17T22:50:47.146Z]  > git --version # timeout=10
-[2024-10-17T22:50:47.148Z]  > git --version # 'git version 2.43.5'
-[2024-10-17T22:50:47.148Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-[2024-10-17T22:50:47.150Z]  > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-[2024-10-17T22:50:47.367Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-[2024-10-17T22:50:47.371Z]  > git config core.sparsecheckout # timeout=10
-[2024-10-17T22:50:47.372Z]  > git checkout -f b7868c839153f1bf09ea9ab63b71399895c279c2 # timeout=10
-[2024-10-17T22:50:48.159Z] [Pipeline] script
-[2024-10-17T22:50:48.186Z] [Pipeline] {
-[2024-10-17T22:50:48.266Z] [Pipeline] pwd
-[2024-10-17T22:50:48.371Z] [Pipeline] echo
-[2024-10-17T22:50:48.396Z] Current workspace: /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
-[2024-10-17T22:50:48.473Z] [Pipeline] findFiles
-[2024-10-17T22:50:48.633Z] [Pipeline] echo
-[2024-10-17T22:50:48.661Z] Error occurred: Expecting Ant GLOB pattern, but saw '/home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/User_Inputs/RestartRDS/*.yaml'. See https://ant.apache.org/manual/Types/fileset.html for syntax
-[2024-10-17T22:50:48.712Z] [Pipeline] error
-[2024-10-17T22:50:48.790Z] [Pipeline] }
-[2024-10-17T22:50:48.950Z] [Pipeline] // script
-[2024-10-17T22:50:49.063Z] [Pipeline] }
-[2024-10-17T22:50:49.211Z] [Pipeline] // stage
-[2024-10-17T22:50:49.292Z] [Pipeline] }
-[2024-10-17T22:50:49.427Z] [Pipeline] // withCredentials
-[2024-10-17T22:50:49.511Z] [Pipeline] }
-[2024-10-17T22:50:49.643Z] [Pipeline] // withEnv
-[2024-10-17T22:50:49.724Z] [Pipeline] }
-[2024-10-17T22:50:49.882Z] [Pipeline] // node
-[2024-10-17T22:50:50.022Z] [Pipeline] End of Pipeline
-[2024-10-17T22:50:50.271Z] ERROR: Pipeline failed due to an unexpected error.
-[2024-10-17T22:50:50.349Z] Finished: FAILURE
+2024-10-17 18:11:35.842  Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+2024-10-17 18:11:35.842  Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+2024-10-17 18:11:35.843  Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
+2024-10-17 18:11:35.871  The recommended git tool is: NONE
+2024-10-17 18:11:35.871  using credential ps590443_token
+2024-10-17 18:11:35.902   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
+2024-10-17 18:11:35.932  Fetching changes from the remote Git repository
+2024-10-17 18:11:35.960   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
+2024-10-17 18:11:35.998  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
+2024-10-17 18:11:35.998   > git --version # timeout=10
+2024-10-17 18:11:36.005   > git --version # 'git version 2.39.2'
+2024-10-17 18:11:36.005  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 18:11:36.083   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+2024-10-17 18:11:36.675   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+2024-10-17 18:11:36.694  Checking out Revision 9a663353e29d2847bd5c04b9930662a3157c8c78 (refs/remotes/origin/main)
+2024-10-17 18:11:36.694   > git config core.sparsecheckout # timeout=10
+2024-10-17 18:11:36.706   > git checkout -f 9a663353e29d2847bd5c04b9930662a3157c8c78 # timeout=10
+2024-10-17 18:11:36.859  Commit message: "Update Platform-SelfService.Jenkinsfile"
+2024-10-17 18:11:36.861   > git rev-list --no-walk 1fa320c2f195cb811d4f5d1bc94da63b8c36177d # timeout=10
+2024-10-17 18:11:37.015  Loading library shared-library@rds-restart
+2024-10-17 18:11:37.015  Attempting to resolve rds-restart from remote references...
+2024-10-17 18:11:37.015   > git --version # timeout=10
+2024-10-17 18:11:37.028   > git --version # 'git version 2.39.2'
+2024-10-17 18:11:37.028  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 18:11:37.034   > git ls-remote -h -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
+2024-10-17 18:11:37.165  Found match: refs/heads/rds-restart revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc
+2024-10-17 18:11:37.191  The recommended git tool is: NONE
+2024-10-17 18:11:37.191  using credential ps590443_token
+2024-10-17 18:11:37.221   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@libs/65c1208ccf758665cbba85a4466820bb0255f980af8470c3b7cf4cd5d1aeebbb/.git # timeout=10
+2024-10-17 18:11:37.236  Fetching changes from the remote Git repository
+2024-10-17 18:11:37.261   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
+2024-10-17 18:11:37.300  Fetching without tags
+2024-10-17 18:11:37.300  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git
+2024-10-17 18:11:37.300   > git --version # timeout=10
+2024-10-17 18:11:37.308   > git --version # 'git version 2.39.2'
+2024-10-17 18:11:37.308  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 18:11:37.386   > git fetch --no-tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+2024-10-17 18:11:37.711  Checking out Revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc (rds-restart)
+2024-10-17 18:11:37.711   > git config core.sparsecheckout # timeout=10
+2024-10-17 18:11:37.723   > git checkout -f 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
+2024-10-17 18:11:37.843  Commit message: "Update extractSchedule.groovy"
+2024-10-17 18:11:37.844   > git rev-list --no-walk 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
+2024-10-17 18:11:38.669  [Pipeline] Start of Pipeline
+2024-10-17 18:11:39.030  [Pipeline] node
+2024-10-17 18:11:39.171  Running on ghs-jenkins-agent-01 in /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
+2024-10-17 18:11:39.198  [Pipeline] {
+2024-10-17 18:11:39.331  [Pipeline] stage
+2024-10-17 18:11:39.357  [Pipeline] { (Declarative: Checkout SCM)
+2024-10-17 18:11:39.492  [Pipeline] checkout
+2024-10-17 18:11:39.562  The recommended git tool is: NONE
+2024-10-17 18:11:39.567  using credential ps590443_token
+2024-10-17 18:11:39.599  Fetching changes from the remote Git repository
+2024-10-17 18:11:39.843  Checking out Revision 9a663353e29d2847bd5c04b9930662a3157c8c78 (refs/remotes/origin/main)
+2024-10-17 18:11:39.862  Commit message: "Update Platform-SelfService.Jenkinsfile"
+2024-10-17 18:11:39.935  [Pipeline] }
+2024-10-17 18:11:40.044  [Pipeline] // stage
+2024-10-17 18:11:40.159  [Pipeline] withEnv
+2024-10-17 18:11:40.187  [Pipeline] {
+2024-10-17 18:11:40.328  [Pipeline] withCredentials
+2024-10-17 18:11:40.386  Masking supported pattern matches of $JENKINS_TOKEN or $JENKINS_TOKEN_PSW
+2024-10-17 18:11:40.416  [Pipeline] {
+2024-10-17 18:11:40.527  [Pipeline] stage
+2024-10-17 18:11:40.555  [Pipeline] { (Read YAML and Create Job)
+2024-10-17 18:11:39.596   > git rev-parse --resolve-git-dir /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/.git # timeout=10
+2024-10-17 18:11:39.602   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
+2024-10-17 18:11:39.605  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
+2024-10-17 18:11:39.605   > git --version # timeout=10
+2024-10-17 18:11:39.607   > git --version # 'git version 2.43.5'
+2024-10-17 18:11:39.607  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 18:11:39.609   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+2024-10-17 18:11:39.840   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+2024-10-17 18:11:39.845   > git config core.sparsecheckout # timeout=10
+2024-10-17 18:11:39.853   > git checkout -f 9a663353e29d2847bd5c04b9930662a3157c8c78 # timeout=10
+2024-10-17 18:11:40.676  [Pipeline] script
+2024-10-17 18:11:40.704  [Pipeline] {
+2024-10-17 18:11:40.819  [Pipeline] readYaml
+2024-10-17 18:11:40.985  [Pipeline] }
+2024-10-17 18:11:41.148  [Pipeline] // script
+2024-10-17 18:11:41.257  [Pipeline] }
+2024-10-17 18:11:41.392  [Pipeline] // stage
+2024-10-17 18:11:41.472  [Pipeline] }
+2024-10-17 18:11:41.604  [Pipeline] // withCredentials
+2024-10-17 18:11:41.685  [Pipeline] }
+2024-10-17 18:11:41.817  [Pipeline] // withEnv
+2024-10-17 18:11:41.901  [Pipeline] }
+2024-10-17 18:11:42.054  [Pipeline] // node
+2024-10-17 18:11:42.191  [Pipeline] End of Pipeline
+2024-10-17 18:11:42.415  Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 716f7e3e-4fe8-45d1-a452-811f4a6e3ab7
+2024-10-17 18:11:42.415  java.io.FileNotFoundException: /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/User_Inputs/RestartRDS/test123.yaml does not exist.
+2024-10-17 18:11:42.415  	at org.jenkinsci.plugins.pipeline.utility.steps.conf.ReadYamlStep$Execution.doRun(ReadYamlStep.java:244)
+2024-10-17 18:11:42.415  	at org.jenkinsci.plugins.pipeline.utility.steps.AbstractFileOrTextStepExecution.run(AbstractFileOrTextStepExecution.java:29)
+2024-10-17 18:11:42.415  	at org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
+2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+2024-10-17 18:11:42.415  	at java.base/java.lang.Thread.run(Unknown Source)
+2024-10-17 18:11:42.496  Finished: FAILURE
