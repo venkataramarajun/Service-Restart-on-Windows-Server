@@ -1,4 +1,4 @@
-@Library('shared-library') _  // If you're using a shared library for snakeyaml
+@Library('shared-library') _
 
 pipeline {
     agent {
@@ -12,27 +12,43 @@ pipeline {
     }
 
     stages {
-        stage('Read YAML and Create Job') {
+        stage('Create Jobs from YAML Files') {
             steps {
                 script {
-                    // Path to the YAML file
-                    def yamlFilePath = 'User_Inputs/RestartRDS/test123.yaml'
-                    
-                    // Extract YAML data (db_name, region, schedule)
-                    def result = extractSchedule(yamlFilePath)
-                    def dbname = result.dbname
-                    def region = result.region
-                    def schedule = result.schedule
+                    // Print the current workspace
+                    def workspace = pwd()
+                    echo "Workspace Path: ${workspace}"
 
-                    // Log the extracted values
-                    echo "Database Name: ${dbname}, Region: ${region}, Schedule: ${schedule}"
+                    // List the files in the User_Inputs/RestartRDS directory
+                    sh 'ls -la User_Inputs/RestartRDS/'
 
-                    // Define folder and job name
-                    def folder = "GHSSelfServicePlatform/AWS-RDS-Restart"
-                    def jobname = "${dbname}-restart-job"
+                    // Get all YAML files from the directory
+                    def filenames = getFileNames('User_Inputs/RestartRDS')
 
-                    // Create the Jenkins job with the extracted parameters
-                    createJob(dbname, region, schedule, folder, jobname, JENKINS_TOKEN_USR, JENKINS_TOKEN_PSW)
+                    if (filenames.size() == 0) {
+                        error("No YAML files found in the specified directory.")
+                    }
+
+                    // Loop through each YAML file
+                    filenames.each { yamlFilePath ->
+                        echo "Processing YAML file: ${yamlFilePath}"
+
+                        // Extract the db_name, region, and schedule from each YAML file
+                        def result = extractSchedule(yamlFilePath)
+                        def dbname = result.dbname
+                        def region = result.region
+                        def schedule = result.schedule
+
+                        // Log the extracted values
+                        echo "Database Name: ${dbname}, Region: ${region}, Schedule: ${schedule}"
+
+                        // Define folder and job name
+                        def folder = "GHSSelfServicePlatform/AWS-RDS-Restart"
+                        def jobname = "${dbname}-restart-job"
+
+                        // Create the Jenkins job for this YAML file
+                        createJob(dbname, region, schedule, folder, jobname, JENKINS_TOKEN_USR, JENKINS_TOKEN_PSW)
+                    }
                 }
             }
         }
@@ -43,7 +59,7 @@ pipeline {
 def createJob(String dbname, String region, String schedule, String folder, String jobname, String username, String token) {
     def jenkinsPath = getJenkinsJobPath(folder)
 
-    // Define the Jenkins job configuration (similar to the samplejob.xml but dynamic)
+    // Define the Jenkins job configuration (dynamic XML)
     def jobConfig = """
         <flow-definition>
           <description>Job to restart RDS ${dbname} in ${region}</description>
@@ -60,7 +76,6 @@ def createJob(String dbname, String region, String schedule, String folder, Stri
                   stage('Restart RDS') {
                     steps {
                       echo "Restarting RDS Instance: ${dbname} in region: ${region}"
-                      // Add your logic here, for example, call an Ansible playbook
                     }
                   }
                 }
@@ -104,7 +119,7 @@ def extractSchedule(String yamlFilePath) {
     // Read the YAML file
     def yamlData = readYaml file: yamlFilePath
 
-    // Extract db_name, region, and schedule
+    // Extract dbname, region, and schedule
     def dbname = yamlData.dbname
     def region = yamlData.region
     def schedule = yamlData.schedule
@@ -112,4 +127,12 @@ def extractSchedule(String yamlFilePath) {
     echo "Parsed YAML: dbname = ${dbname}, region = ${region}, schedule = ${schedule}"
     
     return [dbname: dbname, region: region, schedule: schedule]
+}
+
+// Helper function to get the names of all YAML files in the directory
+def getFileNames(String directoryPath) {
+    // Find all YAML files in the specified directory
+    def files = findFiles(glob: "${directoryPath}/*.yaml")
+    echo "YAML files found: ${files.collect { it.path }}"
+    return files.collect { it.path }
 }
