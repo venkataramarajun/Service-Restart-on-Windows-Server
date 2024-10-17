@@ -2,8 +2,8 @@
 
 pipeline {
     agent {
-	node {
-           label 'docker-build-aws'
+        node {
+            label 'docker-build-aws'
         }
     }
 
@@ -17,12 +17,8 @@ pipeline {
                 script {
                     // Try-Catch for additional error handling
                     try {
-                        // Print the current working directory
-                        def workspace = pwd()
-                        echo "Current workspace: ${workspace}"
-
-                        // Get the list of YAML files in the directory (updated path)
-                        def filenames = getFileNames("${workspace}/User_Inputs/RestartRDS")
+                        // No need for the absolute workspace path in the findFiles pattern
+                        def filenames = getFileNames('User_Inputs/RestartRDS')
 
                         if (filenames.size() == 0) {
                             error("No YAML files found in the specified directory.")
@@ -39,7 +35,7 @@ pipeline {
                             
                             // Define folder and jobname
                             def folder = "GHSSelfServicePlatform/AWS-RDS-Restart"
-			    def jobname = "${database_name}-restart-job"
+                            def jobname = "${database_name}-restart-job"
 
                             echo "Database name: ${database_name}, Region: ${region}, Schedule: ${schedule}"
 
@@ -128,7 +124,7 @@ def extractSchedule(String yamlFilePath) {
 
 // Helper function to get file names from the directory
 def getFileNames(String directoryPath) {
-    // Find all YAML files in the specified directory
+    // Find all YAML files in the specified directory (relative path, no absolute path)
     def files = findFiles(glob: "${directoryPath}/*.yaml")
     echo "Files found: ${files}"
     return files.collect { it.path }
