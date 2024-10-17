@@ -1,0 +1,131 @@
+@Library('shared-library') _  // If you're using a shared library for snakeyaml
+
+pipeline {
+    agent {
+        node {
+            label 'docker-build-aws'
+        }
+    }
+
+    environment {
+        JENKINS_TOKEN = credentials("pavani_jenkins_api_token")
+    }
+
+    stages {
+        stage('Verify Directory and Read YAML') {
+            steps {
+                script {
+                    // Print current workspace
+                    def workspace = pwd()
+                    echo "Current workspace: ${workspace}"
+
+                    // List all files in User_Inputs/RestartRDS for debugging
+                    sh 'ls -la User_Inputs/RestartRDS || echo "Directory not found or empty"'
+
+                    // Get list of YAML files using relative path
+                    def filenames = getFileNames('User_Inputs/RestartRDS')
+
+                    if (filenames.size() == 0) {
+                        error("No YAML files found in the specified directory.")
+                    }
+
+                    echo "YAML files found: ${filenames}"
+
+                    filenames.each { yamlFilePath ->
+                        // Extract YAML data
+                        def result = extractSchedule(yamlFilePath)
+                        def database_name = result.dbname
+                        def region = result.region
+                        def schedule = result.schedule
+                        
+                        // Define folder and jobname
+                        def folder = "GHSSelfServicePlatform/AWS-RDS-Restart"
+                        def jobname = "${database_name}-restart-job"
+
+                        echo "Database name: ${database_name}, Region: ${region}, Schedule: ${schedule}"
+
+                        // Call the job creation function with the extracted parameters
+                        createJob(database_name, region, schedule, folder, jobname, JENKINS_TOKEN_USR, JENKINS_TOKEN_PSW)
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Function to create a Jenkins job using curl command with dynamic parameters
+def createJob(String dbname, String region, String schedule, String folder, String jobname, String username, String token) {
+    // Get the Jenkins job path for folder-based jobs
+    def jenkinsPath = getJenkinsJobPath(folder)
+
+    // Define the Jenkins job configuration (job.xml content can be dynamically created here)
+    def jobConfig = """
+        <flow-definition>
+          <description>Job to restart RDS ${dbname} in ${region}</description>
+          <keepDependencies>false</keepDependencies>
+          <properties/>
+          <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.93">
+            <script>
+              pipeline {
+                agent any
+                triggers {
+                  cron('${schedule}')
+                }
+                stages {
+                  stage('Restart RDS') {
+                    steps {
+                      echo "Restarting RDS Instance: ${dbname} in region: ${region}"
+                      // Add your logic here, for example, call an Ansible playbook
+                    }
+                  }
+                }
+              }
+            </script>
+            <sandbox>true</sandbox>
+          </definition>
+          <disabled>false</disabled>
+        </flow-definition>
+    """
+
+    // Define the curl command to create the Jenkins job via API
+    def createJobCommand = """
+        curl -X POST "https://jenkins.yourdomain.com/${jenkinsPath}/createItem?name=${jobname}" \\
+        --user "${username}:${token}" \\
+        --header "Content-Type: application/xml" \\
+        --data-binary '${jobConfig}'
+    """
+
+    // Execute the shell command
+    sh createJobCommand
+
+    // Log the job creation info
+    echo "Job ${jobname} created in folder ${folder} with schedule ${schedule} to restart ${dbname} in ${region}"
+}
+
+// Function to get Jenkins job path
+def getJenkinsJobPath(String folder) {
+    if (folder.contains("/")) {
+        // Split the folder path and format it as Jenkins job URL
+        def parts = folder.split("/")
+        return parts.collect { "job/${it}" }.join("/")
+    } else {
+        // If no subfolder, return simple folder path
+        return "job/${folder}"
+    }
+}
+
+// Helper function to extract data from YAML file
+def extractSchedule(String yamlFilePath) {
+    // Read and return the dbname, region, and schedule from the YAML file
+    def yamlData = readYaml file: yamlFilePath
+    echo "Parsed YAML data: ${yamlData}"
+    return [dbname: yamlData.dbname, region: yamlData.region, schedule: yamlData.schedule]
+}
+
+// Helper function to get file names from the directory
+def getFileNames(String directoryPath) {
+    // Find all YAML files in the specified directory
+    def files = findFiles(glob: "${directoryPath}/*.yaml")
+    echo "Files found: ${files}"
+    return files.collect { it.path }
+}
