@@ -1,0 +1,51 @@
+@Library('shared-library') _  // If using a shared library for snakeyaml
+
+pipeline {
+    agent {
+        node {
+            label 'docker-build-aws'
+        }
+    }
+    environment {
+        JENKINS_TOKEN = credentials("pavani_jenkins_api_token")
+    }
+    stages {
+        stage('Read YAML') {
+            steps {
+                script {
+                    def filenames = getFileNames("User_Inputs/RestartRDS")
+                    echo "YAML files found: ${filenames}"
+
+                    filenames.each { yamlFilePath ->
+                        def result = extractSchedule(yamlFilePath)
+                        def databaseName = result.database_name
+                        def schedule = result.schedule
+
+                        echo "Database name: ${databaseName}, Schedule: ${schedule}"
+
+                        createJob(schedule, "GHSSelfServicePlatform/AWS-RDS-Restart", "${databaseName}-restart-schedule", JENKINS_TOKEN_USR, JENKINS_TOKEN_PSW)
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Function to create a job in Jenkins
+def createJob(schedule, folder, jobName, username, token) {
+    def jenkinsPath = getJenkinsJobPath(folder)
+    
+    def createJobCommand = """
+    curl -s -X POST "https://jenkins.cargill.com/${jenkinsPath}/newJob?name=${jobName}" \\
+        --user "${username}:${token}" \\
+        --header "Content-Type: application/xml" \\
+        --data-binary '<project><triggers><hudson.triggers.TimerTrigger><spec>${schedule}</spec></hudson.triggers.TimerTrigger></triggers><builders><hudson.tasks.Shell><command>echo "Restarting RDS: ${databaseName}"</command></hudson.tasks.Shell></builders></project>'
+    """
+    sh createJobCommand
+    echo "Job '${jobName}' created in folder '${folder}' with schedule '${schedule}'"
+}
+
+// Helper function to construct Jenkins job path
+def getJenkinsJobPath(String folder) {
+    return folder.contains('/') ? folder.split('/').collect { "job/${it}" }.join('/') : "job/${folder}"
+}
