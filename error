@@ -1,98 +1,173 @@
-2024-10-17 18:11:35.842  Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-2024-10-17 18:11:35.842  Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-2024-10-17 18:11:35.843  Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
-2024-10-17 18:11:35.871  The recommended git tool is: NONE
-2024-10-17 18:11:35.871  using credential ps590443_token
-2024-10-17 18:11:35.902   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
-2024-10-17 18:11:35.932  Fetching changes from the remote Git repository
-2024-10-17 18:11:35.960   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
-2024-10-17 18:11:35.998  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
-2024-10-17 18:11:35.998   > git --version # timeout=10
-2024-10-17 18:11:36.005   > git --version # 'git version 2.39.2'
-2024-10-17 18:11:36.005  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:11:36.083   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-2024-10-17 18:11:36.675   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-2024-10-17 18:11:36.694  Checking out Revision 9a663353e29d2847bd5c04b9930662a3157c8c78 (refs/remotes/origin/main)
-2024-10-17 18:11:36.694   > git config core.sparsecheckout # timeout=10
-2024-10-17 18:11:36.706   > git checkout -f 9a663353e29d2847bd5c04b9930662a3157c8c78 # timeout=10
-2024-10-17 18:11:36.859  Commit message: "Update Platform-SelfService.Jenkinsfile"
-2024-10-17 18:11:36.861   > git rev-list --no-walk 1fa320c2f195cb811d4f5d1bc94da63b8c36177d # timeout=10
-2024-10-17 18:11:37.015  Loading library shared-library@rds-restart
-2024-10-17 18:11:37.015  Attempting to resolve rds-restart from remote references...
-2024-10-17 18:11:37.015   > git --version # timeout=10
-2024-10-17 18:11:37.028   > git --version # 'git version 2.39.2'
-2024-10-17 18:11:37.028  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:11:37.034   > git ls-remote -h -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
-2024-10-17 18:11:37.165  Found match: refs/heads/rds-restart revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc
-2024-10-17 18:11:37.191  The recommended git tool is: NONE
-2024-10-17 18:11:37.191  using credential ps590443_token
-2024-10-17 18:11:37.221   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@libs/65c1208ccf758665cbba85a4466820bb0255f980af8470c3b7cf4cd5d1aeebbb/.git # timeout=10
-2024-10-17 18:11:37.236  Fetching changes from the remote Git repository
-2024-10-17 18:11:37.261   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
-2024-10-17 18:11:37.300  Fetching without tags
-2024-10-17 18:11:37.300  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git
-2024-10-17 18:11:37.300   > git --version # timeout=10
-2024-10-17 18:11:37.308   > git --version # 'git version 2.39.2'
-2024-10-17 18:11:37.308  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:11:37.386   > git fetch --no-tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-2024-10-17 18:11:37.711  Checking out Revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc (rds-restart)
-2024-10-17 18:11:37.711   > git config core.sparsecheckout # timeout=10
-2024-10-17 18:11:37.723   > git checkout -f 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
-2024-10-17 18:11:37.843  Commit message: "Update extractSchedule.groovy"
-2024-10-17 18:11:37.844   > git rev-list --no-walk 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
-2024-10-17 18:11:38.669  [Pipeline] Start of Pipeline
-2024-10-17 18:11:39.030  [Pipeline] node
-2024-10-17 18:11:39.171  Running on ghs-jenkins-agent-01 in /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
-2024-10-17 18:11:39.198  [Pipeline] {
-2024-10-17 18:11:39.331  [Pipeline] stage
-2024-10-17 18:11:39.357  [Pipeline] { (Declarative: Checkout SCM)
-2024-10-17 18:11:39.492  [Pipeline] checkout
-2024-10-17 18:11:39.562  The recommended git tool is: NONE
-2024-10-17 18:11:39.567  using credential ps590443_token
-2024-10-17 18:11:39.599  Fetching changes from the remote Git repository
-2024-10-17 18:11:39.843  Checking out Revision 9a663353e29d2847bd5c04b9930662a3157c8c78 (refs/remotes/origin/main)
-2024-10-17 18:11:39.862  Commit message: "Update Platform-SelfService.Jenkinsfile"
-2024-10-17 18:11:39.935  [Pipeline] }
-2024-10-17 18:11:40.044  [Pipeline] // stage
-2024-10-17 18:11:40.159  [Pipeline] withEnv
-2024-10-17 18:11:40.187  [Pipeline] {
-2024-10-17 18:11:40.328  [Pipeline] withCredentials
-2024-10-17 18:11:40.386  Masking supported pattern matches of $JENKINS_TOKEN or $JENKINS_TOKEN_PSW
-2024-10-17 18:11:40.416  [Pipeline] {
-2024-10-17 18:11:40.527  [Pipeline] stage
-2024-10-17 18:11:40.555  [Pipeline] { (Read YAML and Create Job)
-2024-10-17 18:11:39.596   > git rev-parse --resolve-git-dir /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/.git # timeout=10
-2024-10-17 18:11:39.602   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
-2024-10-17 18:11:39.605  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
-2024-10-17 18:11:39.605   > git --version # timeout=10
-2024-10-17 18:11:39.607   > git --version # 'git version 2.43.5'
-2024-10-17 18:11:39.607  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:11:39.609   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-2024-10-17 18:11:39.840   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-2024-10-17 18:11:39.845   > git config core.sparsecheckout # timeout=10
-2024-10-17 18:11:39.853   > git checkout -f 9a663353e29d2847bd5c04b9930662a3157c8c78 # timeout=10
-2024-10-17 18:11:40.676  [Pipeline] script
-2024-10-17 18:11:40.704  [Pipeline] {
-2024-10-17 18:11:40.819  [Pipeline] readYaml
-2024-10-17 18:11:40.985  [Pipeline] }
-2024-10-17 18:11:41.148  [Pipeline] // script
-2024-10-17 18:11:41.257  [Pipeline] }
-2024-10-17 18:11:41.392  [Pipeline] // stage
-2024-10-17 18:11:41.472  [Pipeline] }
-2024-10-17 18:11:41.604  [Pipeline] // withCredentials
-2024-10-17 18:11:41.685  [Pipeline] }
-2024-10-17 18:11:41.817  [Pipeline] // withEnv
-2024-10-17 18:11:41.901  [Pipeline] }
-2024-10-17 18:11:42.054  [Pipeline] // node
-2024-10-17 18:11:42.191  [Pipeline] End of Pipeline
-2024-10-17 18:11:42.415  Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 716f7e3e-4fe8-45d1-a452-811f4a6e3ab7
-2024-10-17 18:11:42.415  java.io.FileNotFoundException: /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/User_Inputs/RestartRDS/test123.yaml does not exist.
-2024-10-17 18:11:42.415  	at org.jenkinsci.plugins.pipeline.utility.steps.conf.ReadYamlStep$Execution.doRun(ReadYamlStep.java:244)
-2024-10-17 18:11:42.415  	at org.jenkinsci.plugins.pipeline.utility.steps.AbstractFileOrTextStepExecution.run(AbstractFileOrTextStepExecution.java:29)
-2024-10-17 18:11:42.415  	at org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
-2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-2024-10-17 18:11:42.415  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-2024-10-17 18:11:42.415  	at java.base/java.lang.Thread.run(Unknown Source)
-2024-10-17 18:11:42.496  Finished: FAILURE
+[2024-10-17T23:22:15.912Z] Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+[2024-10-17T23:22:15.912Z] Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+[2024-10-17T23:22:15.913Z] Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
+[2024-10-17T23:22:15.936Z] The recommended git tool is: NONE
+[2024-10-17T23:22:15.936Z] using credential ps590443_token
+[2024-10-17T23:22:15.967Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
+[2024-10-17T23:22:15.989Z] Fetching changes from the remote Git repository
+[2024-10-17T23:22:16.012Z]  > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
+[2024-10-17T23:22:16.051Z] Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
+[2024-10-17T23:22:16.051Z]  > git --version # timeout=10
+[2024-10-17T23:22:16.058Z]  > git --version # 'git version 2.39.2'
+[2024-10-17T23:22:16.058Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+[2024-10-17T23:22:16.136Z]  > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2024-10-17T23:22:16.640Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2024-10-17T23:22:16.661Z] Checking out Revision f88baea70f852af288b1579dc40d3b374bb1102b (refs/remotes/origin/main)
+[2024-10-17T23:22:16.661Z]  > git config core.sparsecheckout # timeout=10
+[2024-10-17T23:22:16.673Z]  > git checkout -f f88baea70f852af288b1579dc40d3b374bb1102b # timeout=10
+[2024-10-17T23:22:16.805Z] Commit message: "Update Platform-SelfService.Jenkinsfile"
+[2024-10-17T23:22:16.807Z]  > git rev-list --no-walk eec9c7a243fc1b5072ac75fc1bab2306ef690f48 # timeout=10
+[2024-10-17T23:22:16.953Z] Loading library shared-library@rds-restart
+[2024-10-17T23:22:16.954Z] Attempting to resolve rds-restart from remote references...
+[2024-10-17T23:22:16.954Z]  > git --version # timeout=10
+[2024-10-17T23:22:16.966Z]  > git --version # 'git version 2.39.2'
+[2024-10-17T23:22:16.966Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+[2024-10-17T23:22:16.973Z]  > git ls-remote -h -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
+[2024-10-17T23:22:17.114Z] Found match: refs/heads/rds-restart revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc
+[2024-10-17T23:22:17.137Z] The recommended git tool is: NONE
+[2024-10-17T23:22:17.137Z] using credential ps590443_token
+[2024-10-17T23:22:17.170Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@libs/65c1208ccf758665cbba85a4466820bb0255f980af8470c3b7cf4cd5d1aeebbb/.git # timeout=10
+[2024-10-17T23:22:17.180Z] Fetching changes from the remote Git repository
+[2024-10-17T23:22:17.203Z]  > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
+[2024-10-17T23:22:17.240Z] Fetching without tags
+[2024-10-17T23:22:17.241Z] Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git
+[2024-10-17T23:22:17.241Z]  > git --version # timeout=10
+[2024-10-17T23:22:17.248Z]  > git --version # 'git version 2.39.2'
+[2024-10-17T23:22:17.248Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+[2024-10-17T23:22:17.328Z]  > git fetch --no-tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2024-10-17T23:22:17.627Z] Checking out Revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc (rds-restart)
+[2024-10-17T23:22:17.627Z]  > git config core.sparsecheckout # timeout=10
+[2024-10-17T23:22:17.639Z]  > git checkout -f 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
+[2024-10-17T23:22:17.726Z] Commit message: "Update extractSchedule.groovy"
+[2024-10-17T23:22:17.728Z]  > git rev-list --no-walk 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
+[2024-10-17T23:22:18.513Z] [Pipeline] Start of Pipeline
+[2024-10-17T23:22:18.769Z] [Pipeline] node
+[2024-10-17T23:22:18.909Z] Running on ghs-jenkins-agent-01 in /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
+[2024-10-17T23:22:18.935Z] [Pipeline] {
+[2024-10-17T23:22:19.069Z] [Pipeline] stage
+[2024-10-17T23:22:19.096Z] [Pipeline] { (Declarative: Checkout SCM)
+[2024-10-17T23:22:19.231Z] [Pipeline] checkout
+[2024-10-17T23:22:19.294Z] The recommended git tool is: NONE
+[2024-10-17T23:22:19.299Z] using credential ps590443_token
+[2024-10-17T23:22:19.331Z] Fetching changes from the remote Git repository
+[2024-10-17T23:22:19.560Z] Checking out Revision f88baea70f852af288b1579dc40d3b374bb1102b (refs/remotes/origin/main)
+[2024-10-17T23:22:19.569Z] Commit message: "Update Platform-SelfService.Jenkinsfile"
+[2024-10-17T23:22:19.641Z] [Pipeline] }
+[2024-10-17T23:22:19.752Z] [Pipeline] // stage
+[2024-10-17T23:22:19.859Z] [Pipeline] withEnv
+[2024-10-17T23:22:19.885Z] [Pipeline] {
+[2024-10-17T23:22:20.024Z] [Pipeline] withCredentials
+[2024-10-17T23:22:20.079Z] Masking supported pattern matches of $JENKINS_TOKEN or $JENKINS_TOKEN_PSW
+[2024-10-17T23:22:20.108Z] [Pipeline] {
+[2024-10-17T23:22:20.218Z] [Pipeline] stage
+[2024-10-17T23:22:20.245Z] [Pipeline] { (Create Jobs from YAML Files)
+[2024-10-17T23:22:19.328Z]  > git rev-parse --resolve-git-dir /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/.git # timeout=10
+[2024-10-17T23:22:19.334Z]  > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
+[2024-10-17T23:22:19.338Z] Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
+[2024-10-17T23:22:19.338Z]  > git --version # timeout=10
+[2024-10-17T23:22:19.339Z]  > git --version # 'git version 2.43.5'
+[2024-10-17T23:22:19.339Z] using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+[2024-10-17T23:22:19.341Z]  > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2024-10-17T23:22:19.557Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2024-10-17T23:22:19.562Z]  > git config core.sparsecheckout # timeout=10
+[2024-10-17T23:22:19.564Z]  > git checkout -f f88baea70f852af288b1579dc40d3b374bb1102b # timeout=10
+[2024-10-17T23:22:20.367Z] [Pipeline] script
+[2024-10-17T23:22:20.394Z] [Pipeline] {
+[2024-10-17T23:22:20.477Z] [Pipeline] pwd
+[2024-10-17T23:22:20.582Z] [Pipeline] echo
+[2024-10-17T23:22:20.609Z] Workspace Path: /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
+[2024-10-17T23:22:20.660Z] [Pipeline] sh
+[2024-10-17T23:22:20.956Z] + ls -la User_Inputs/RestartRDS/
+[2024-10-17T23:22:20.956Z] total 16
+[2024-10-17T23:22:20.957Z] drwxr-x--- 2 CloudAdmin CloudAdmin  99 Oct 17 17:09 .
+[2024-10-17T23:22:20.957Z] drwxr-x--- 3 CloudAdmin CloudAdmin  24 Oct 17 16:27 ..
+[2024-10-17T23:22:20.957Z] -rw-r----- 1 CloudAdmin CloudAdmin 216 Oct 17 16:27 dbiusameacd2001.yml
+[2024-10-17T23:22:20.957Z] -rw-r----- 1 CloudAdmin CloudAdmin 216 Oct 17 17:09 dbiusameacd2002.yaml
+[2024-10-17T23:22:20.957Z] -rw-r----- 1 CloudAdmin CloudAdmin  46 Oct 17 16:27 test123.yml
+[2024-10-17T23:22:20.957Z] -rw-r----- 1 CloudAdmin CloudAdmin  51 Oct 17 16:27 test234.yml
+[2024-10-17T23:22:21.039Z] [Pipeline] findFiles
+[2024-10-17T23:22:21.176Z] [Pipeline] echo
+[2024-10-17T23:22:21.202Z] YAML files found: [User_Inputs/RestartRDS/dbiusameacd2002.yaml]
+[2024-10-17T23:22:21.283Z] [Pipeline] echo
+[2024-10-17T23:22:21.310Z] Processing YAML file: User_Inputs/RestartRDS/dbiusameacd2002.yaml
+[2024-10-17T23:22:21.389Z] [Pipeline] readYaml
+[2024-10-17T23:22:21.523Z] [Pipeline] echo
+[2024-10-17T23:22:21.550Z] Parsed YAML: dbname = dbiusameacd2002, region = us-east-1, schedule = H 10 20 * *
+[2024-10-17T23:22:21.601Z] [Pipeline] echo
+[2024-10-17T23:22:21.627Z] Database Name: dbiusameacd2002, Region: us-east-1, Schedule: H 10 20 * *
+[2024-10-17T23:22:21.740Z] [Pipeline] sh
+[2024-10-17T23:22:21.767Z] Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+[2024-10-17T23:22:21.767Z] 		 Affected argument(s) used the following variable(s): [JENKINS_TOKEN, JENKINS_TOKEN_PSW]
+[2024-10-17T23:22:21.767Z] 		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
+[2024-10-17T23:22:22.033Z] + curl -s -X POST 'https://jenkins.cargill.com/job/GHSSelfServicePlatform/job/AWS-RDS-Restart/createItem?name=dbiusameacd2002-restart-job' --user **** --header 'Content-Type: text/xml' --data-binary '
+[2024-10-17T23:22:22.033Z]         <flow-definition>
+[2024-10-17T23:22:22.033Z]           <description>Job to restart RDS dbiusameacd2002 in us-east-1</description>
+[2024-10-17T23:22:22.033Z]           <keepDependencies>false</keepDependencies>
+[2024-10-17T23:22:22.034Z]           <properties/>
+[2024-10-17T23:22:22.034Z]           <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.93">
+[2024-10-17T23:22:22.034Z]             <script>
+[2024-10-17T23:22:22.034Z]               pipeline {
+[2024-10-17T23:22:22.034Z]                 agent any
+[2024-10-17T23:22:22.034Z]                 triggers {
+[2024-10-17T23:22:22.034Z]                   cron(H' 10 20 Platform-SelfService.Jenkinsfile README.md samplejob.xml User_Inputs '*)
+[2024-10-17T23:22:22.034Z]                 }
+[2024-10-17T23:22:22.034Z]                 stages {
+[2024-10-17T23:22:22.034Z]                   stage(Restart' 'RDS) {
+[2024-10-17T23:22:22.034Z]                     steps {
+[2024-10-17T23:22:22.034Z]                       echo "Restarting RDS Instance: dbiusameacd2002 in region: us-east-1"
+[2024-10-17T23:22:22.034Z]                     }
+[2024-10-17T23:22:22.034Z]                   }
+[2024-10-17T23:22:22.034Z]                 }
+[2024-10-17T23:22:22.034Z]               }
+[2024-10-17T23:22:22.034Z]             </script>
+[2024-10-17T23:22:22.034Z]             <sandbox>true</sandbox>
+[2024-10-17T23:22:22.034Z]           </definition>
+[2024-10-17T23:22:22.034Z]           <disabled>false</disabled>
+[2024-10-17T23:22:22.034Z]         </flow-definition>
+[2024-10-17T23:22:22.034Z]     '
+[2024-10-17T23:22:22.291Z] 
+[2024-10-17T23:22:22.291Z]   
+[2024-10-17T23:22:22.291Z]   <!DOCTYPE html><html><head resURL="/static/89b9748f" data-rooturl="" data-resurl="/static/89b9748f" data-extensions-available="true" data-unit-test="false" data-imagesurl="/static/89b9748f/images" data-crumb-header="Jenkins-Crumb" data-crumb-value="d091687a2d3c450ce2d220d60cf46b50b221ee4be95bab08e0b94ab66524aade">
+[2024-10-17T23:22:22.291Z]     
+[2024-10-17T23:22:22.291Z]     
+[2024-10-17T23:22:22.291Z] 
+[2024-10-17T23:22:22.291Z]     <title>Jenkins [Jenkins]</title><link rel="stylesheet" href="/static/89b9748f/jsbundles/styles.css" type="text/css"><link rel="stylesheet" href="/static/89b9748f/css/responsive-grid.css" type="text/css"><link rel="icon" href="/static/89b9748f/favicon.svg" type="image/svg+xml"><link sizes="any" rel="alternate icon" href="/static/89b9748f/favicon.ico"><link sizes="180x180" rel="apple-touch-icon" href="/static/89b9748f/apple-touch-icon.png"><link color="#191717" rel="mask-icon" href="/static/89b9748f/mask-icon.svg"><meta name="theme-color" content="#ffffff"><script src="/static/89b9748f/scripts/behavior.js" type="text/javascript"></script><script src='/adjuncts/89b9748f/org/kohsuke/stapler/bind.js' type='text/javascript'></script><script src="/static/89b9748f/scripts/yui/yahoo/yahoo-min.js"></script><script src="/static/89b9748f/scripts/yui/dom/dom-min.js"></script><script src="/static/89b9748f/scripts/yui/event/event-min.js"></script><script src="/static/89b9748f/scripts/yui/animation/animation-min.js"></script><script src="/static/89b9748f/scripts/yui/dragdrop/dragdrop-min.js"></script><script src="/static/89b9748f/scripts/yui/container/container-min.js"></script><script src="/static/89b9748f/scripts/yui/connection/connection-min.js"></script><script src="/static/89b9748f/scripts/yui/datasource/datasource-min.js"></script><script src="/static/89b9748f/scripts/yui/autocomplete/autocomplete-min.js"></script><script src="/static/89b9748f/scripts/yui/menu/menu-min.js"></script><script src="/static/89b9748f/scripts/yui/element/element-min.js"></script><script src="/static/89b9748f/scripts/yui/button/button-min.js"></script><script src="/static/89b9748f/scripts/yui/storage/storage-min.js"></script><script src="/static/89b9748f/scripts/hudson-behavior.js" type="text/javascript"></script><script src="/static/89b9748f/scripts/sortable.js" type="text/javascript"></script><link rel="stylesheet" href="/static/89b9748f/scripts/yui/container/assets/container.css" type="text/css"><link rel="stylesheet" href="/static/89b9748f/scripts/yui/container/assets/skins/sam/container.css" type="text/css"><link rel="stylesheet" href="/static/89b9748f/scripts/yui/menu/assets/skins/sam/menu.css" type="text/css"><meta name="ROBOTS" content="INDEX,NOFOLLOW"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="/adjuncts/89b9748f/org/kohsuke/stapler/jquery/jquery.full.js" type="text/javascript"></script><script>var Q=jQuery.noConflict()</script><link rel="stylesheet" href="/plugin/jquery-ui/css/jquery-ui-1.8.9.custom.css" type="text/css"><script src="/plugin/jquery-ui/js/jquery-ui-1.8.9.custom.min.js"></script><script src='/adjuncts/89b9748f/org/jenkinsci/plugins/scriptsecurity/scripts/ScriptApproval/FormValidationPageDecorator/validate.js' type='text/javascript'></script><script>
+[2024-10-17T23:22:22.292Z]     if(window.Prototype && JSON) {
+[2024-10-17T23:22:22.292Z]     var _json_stringify = JSON.stringify;
+[2024-10-17T23:22:22.292Z]     JSON.stringify = function(value) {
+[2024-10-17T23:22:22.292Z]     var _array_tojson = Array.prototype.toJSON;
+[2024-10-17T23:22:22.292Z]     delete Array.prototype.toJSON;
+[2024-10-17T23:22:22.292Z]     var r=_json_stringify(value);
+[2024-10-17T23:22:22.292Z]     Array.prototype.toJSON = _array_tojson;
+[2024-10-17T23:22:22.292Z]     return r;
+[2024-10-17T23:22:22.292Z]     };
+[2024-10-17T23:22:22.292Z]     }
+[2024-10-17T23:22:22.292Z]   </script><script src="/static/89b9748f/plugin/extended-choice-parameter/js/selectize.min.js" type="text/javascript"></script><script src="/static/89b9748f/plugin/extended-choice-parameter/js/jsoneditor.min.js" type="text/javascript"></script><script src="/static/89b9748f/plugin/extended-choice-parameter/js/jquery.jsonview.min.js" type="text/javascript"></script><link rel="stylesheet" href="/static/89b9748f/plugin/extended-choice-parameter/css/jquery.jsonview.css"><link rel="stylesheet" id="icon_stylesheet" href="/static/89b9748f/plugin/extended-choice-parameter/css/selectize.css"><link rel="stylesheet" id="icon_stylesheet" href="/static/89b9748f/plugin/extended-choice-parameter/css/selectize.bootstrap2.css"><link rel="stylesheet" id="theme_stylesheet"><link rel="stylesheet" id="icon_stylesheet"><script src="/static/89b9748f/jsbundles/vendors.js" type="text/javascript"></script><script src="/static/89b9748f/jsbundles/sortable-drag-drop.js" type="text/javascript"></script><script defer="true" src="/static/89b9748f/jsbundles/app.js" type="text/javascript"></script></head><body data-model-type="hudson.model.Hudson" id="jenkins" class="yui-skin-sam one-column jenkins-2.440.2" data-version="2.440.2"><a href="#skip2content" class="jenkins-skip-link">Skip to content</a><header id="page-header" class="page-header"><div class="page-header__brand"><div class="logo"><a id="jenkins-home-link" href="/"><img src="/static/89b9748f/images/svgs/logo.svg" alt="[Jenkins]" id="jenkins-head-icon"><img src="/static/89b9748f/images/title.svg" alt="Jenkins" width="139" id="jenkins-name-icon" height="34"></a></div><a href="/" class="page-header__brand-link"><img src="/static/89b9748f/images/svgs/logo.svg" alt="[Jenkins]" class="page-header__brand-image"><span class="page-header__brand-name">Jenkins</span></a></div><div class="searchbox hidden-xs"><form role="search" method="get" name="search" action="/search/" style="position:relative;" class="no-json"><div id="search-box-sizer"></div><div id="searchform"><input role="searchbox" name="q" placeholder="Search" id="search-box" class="main-search__input"><span class="main-search__icon-leading"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><title></title><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg></span><a href="https://www.jenkins.io/redirect/search-box" class="main-search__icon-trailing"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 40a216 216 0 10216 216A216 216 0 00256 40z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="38"/><path d="M200 202.29s.84-17.5 19.57-32.57C230.68 160.77 244 158.18 256 158c10.93-.14 20.69 1.67 26.53 4.45 10 4.76 29.47 16.38 29.47 41.09 0 26-17 37.81-36.37 50.8S251 281.43 251 296" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="38"/><circle cx="250" cy="360" r="25" fill="currentColor"/></svg></a><div id="search-box-completion" data-search-url="/search/"></div><script src='/adjuncts/89b9748f/jenkins/views/JenkinsHeader/search-box.js' type='text/javascript'></script></div></form></div><div class="login page-header__hyperlinks"><div id="visible-am-insertion" class="page-header__am-wrapper"></div><div id="visible-sec-am-insertion" class="page-header__am-wrapper"></div><a href="/securityRealm/commenceLogin?from=%2Fjob%2FGHSSelfServicePlatform%2Fjob%2FAWS-RDS-Restart%2FcreateItem">log in</a></div></header><script src="/static/89b9748f/jsbundles/keyboard-shortcuts.js" type="text/javascript"></script><div id="breadcrumbBar" class="jenkins-breadcrumbs" aria-label="breadcrumb"><ol class="jenkins-breadcrumbs__list" id="breadcrumbs"><li class="jenkins-breadcrumbs__list-item"><a href="/" class="model-link">Dashboard</a></li><li class="children" data-href="/"></li></ol></div><div id="page-body" class="app-page-body app-page-body--one-column clear"><div id="main-panel"><a id="skip2content"></a><h1 style="text-align: center"><img src="/static/89b9748f/images/rage.svg" width="154" height="179"><span style="font-size:50px"> Oops!</span></h1><div id="error-description"><h2 style="text-align: center">A problem occurred while processing the request</h2><p style="text-align: center">Logging ID=35956af5-4061-4369-9c31-298f74317505</div></div></div><footer class="page-footer jenkins-mobile-hide"><div class="page-footer__flex-row"><div class="page-footer__footer-id-placeholder" id="footer"></div><div class="page-footer__links"><a class="jenkins-button jenkins-button--tertiary rest-api" href="api/">REST API</a><button type="button" class="jenkins-button jenkins-button--tertiary jenkins_ver" data-dropdown="true">
+[2024-10-17T23:22:22.293Z] 
+[2024-10-17T23:22:22.293Z]     Jenkins 2.440.2
+[2024-10-17T23:22:22.293Z]   </button><template><div class="jenkins-dropdown"><a class="jenkins-dropdown__item" href="https://www.jenkins.io/participate/" rel="noopener noreferrer" target="_blank"><div class="jenkins-dropdown__item__icon"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+[2024-10-17T23:22:22.293Z] </div>
+[2024-10-17T23:22:22.293Z]                 Get involved
+[2024-10-17T23:22:22.293Z]               </a><a rel="noopener noreferrer" href="https://www.jenkins.io/" class="jenkins-dropdown__item" target="_blank"><div class="jenkins-dropdown__item__icon"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+[2024-10-17T23:22:22.293Z] </div>
+[2024-10-17T23:22:22.293Z]                 Website
+[2024-10-17T23:26:58.755Z]               </a></div></template></div></div></footer></body></html><html>
+[2024-10-17T23:26:58.755Z] <head><title>301 Moved Permanently</title></head>
+[2024-10-17T23:26:58.755Z] <body>
+[2024-10-17T23:26:58.755Z] <center><h1>301 Moved Permanently</h1></center>
+[2024-10-17T23:26:58.755Z] <hr><center>nginx/1.20.2</center>
+[2024-10-17T23:26:58.755Z] </body>
+[2024-10-17T23:26:58.755Z] </html>
+[2024-10-17T23:26:58.835Z] [Pipeline] }
+[2024-10-17T23:26:59.053Z] [Pipeline] // script
+[2024-10-17T23:26:59.158Z] [Pipeline] }
+[2024-10-17T23:26:59.291Z] [Pipeline] // stage
+[2024-10-17T23:26:59.374Z] [Pipeline] }
+[2024-10-17T23:26:59.507Z] [Pipeline] // withCredentials
+[2024-10-17T23:26:59.589Z] [Pipeline] }
+[2024-10-17T23:26:59.714Z] [Pipeline] // withEnv
+[2024-10-17T23:26:59.792Z] [Pipeline] }
+[2024-10-17T23:26:59.942Z] [Pipeline] // node
+[2024-10-17T23:27:00.071Z] [Pipeline] End of Pipeline
+[2024-10-17T23:27:00.326Z] ERROR: script returned exit code 6
+[2024-10-17T23:27:00.402Z] Finished: FAILURE
