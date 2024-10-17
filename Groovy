@@ -1,9 +1,14 @@
+@Library('shared-library') _  // If you're using a shared library for snakeyaml
+
 pipeline {
-    agent any
+    agent {
+	node {
+           label 'docker-build-aws'
+        }
+    }
 
     environment {
-        JENKINS_TOKEN_USR = credentials("pavani jenkins api token").USR
-        JENKINS_TOKEN_PSW = credentials("pavani jenkins api token").PSW
+        JENKINS_TOKEN = credentials("pavani_jenkins_api_token")
     }
 
     stages {
@@ -25,6 +30,8 @@ pipeline {
                             
                             // Define folder and jobname
                             def folder = "GHSSelfServicePlatform/AWS-RDS-Restart"
+			    echo JENKINS_TOKEN_USR
+                            echo JENKINS_TOKEN_PSW
                             def jobname = "${database_name}-restart-job"
 
                             echo "Database name: ${database_name}, Region: ${region}, Schedule: ${schedule}"
