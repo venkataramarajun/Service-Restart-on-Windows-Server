@@ -1,0 +1,161 @@
+Basic groovy script
+Jenkins-code for rds reboot
+===========================
+
+@Library('shared-library') _  // If you're using a shared library for snakeyaml
+
+pipeline {
+    agent {
+        node {
+           label 'docker-build-aws'
+        }
+    }
+    environment {
+        JENKINS_TOKEN = credentials("pavani_jenkins_api_token")
+    }
+    stages {
+        stage('Read YAML') {
+            steps {
+                script {
+                    def filenames = getFileNames("User_Inputs/RestartRDS")
+                    echo "YAML files found: ${filenames}"
+
+                    filenames.each { yamlFilePath ->
+
+                        def result = extractSchedule(yamlFilePath)
+                        def database_name = result.database_name
+                        def schedule = result.schedule
+
+                        echo "Database name: ${database_name}, Schedule: ${schedule}"
+                        echo JENKINS_TOKEN_USR
+                        echo JENKINS_TOKEN_PSW
+
+                        createJob(schedule, "GHSSelfServicePlatform/AWS-RDS-Restart", "${database_name}-restart-schedule", JENKINS_TOKEN_USR, JENKINS_TOKEN_PSW)
+                    }
+                }
+            }
+        }
+    }
+}
+
+Samplejob creation xml file
+
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.13"/>
+    <org.datadog.jenkins.plugins.datadog.DatadogJobProperty plugin="datadog@6.0.3">
+      <enableFile>false</enableFile>
+      <tagFile></tagFile>
+      <enableProperty>false</enableProperty>
+      <tagProperties></tagProperties>
+      <emitSCMEvents>true</emitSCMEvents>
+    </org.datadog.jenkins.plugins.datadog.DatadogJobProperty>
+    <job-metadata plugin="metadata@1.1.0b">
+      <values class="linked-list">
+        <metadata-tree>
+          <name>job-info</name>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>true</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <children class="linked-list">
+            <metadata-tree>
+              <name>last-saved</name>
+              <description></description>
+              <parent class="metadata-tree" reference="../../.."/>
+              <generated>true</generated>
+              <exposedToEnvironment>false</exposedToEnvironment>
+              <children class="linked-list">
+                <metadata-date>
+                  <name>time</name>
+                  <description></description>
+                  <parent class="metadata-tree" reference="../../.."/>
+                  <generated>true</generated>
+                  <exposedToEnvironment>false</exposedToEnvironment>
+                  <value>
+                    <time>1718157068182</time>
+                    <timezone>America/Chicago</timezone>
+                  </value>
+                  <checked>false</checked>
+                </metadata-date>
+                <metadata-tree>
+                  <name>user</name>
+                  <parent class="metadata-tree" reference="../../.."/>
+                  <generated>true</generated>
+                  <exposedToEnvironment>false</exposedToEnvironment>
+                  <children class="linked-list">
+                    <metadata-string>
+                      <name>display-name</name>
+                      <description></description>
+                      <parent class="metadata-tree" reference="../../.."/>
+                      <generated>true</generated>
+                      <exposedToEnvironment>false</exposedToEnvironment>
+                      <value>PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM</value>
+                    </metadata-string>
+                    <metadata-string>
+                      <name>full-name</name>
+                      <description></description>
+                      <parent class="metadata-tree" reference="../../.."/>
+                      <generated>true</generated>
+                      <exposedToEnvironment>false</exposedToEnvironment>
+                      <value>PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM</value>
+                    </metadata-string>
+                  </children>
+                </metadata-tree>
+              </children>
+            </metadata-tree>
+          </children>
+        </metadata-tree>
+      </values>
+    </job-metadata>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H 10 15 * *</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo &quot;Hello World&quot;</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
+
+Job create groovy
+def call(schedule, folder, jobname, username, token) {
+    
+    // Create the job
+    def jenkins_path = getJenkinsJobPath(folder)
+    def createJobCommand = """
+    curl -s -X POST "https://jenkins.cargill.com/${jenkins_path}/createItem?name=${jobname}" \\
+        --user "${username}:${token}" \\
+        --header "Content-Type: text/xml" \\
+        --data-binary @samplejob.xml
+    """
+    sh createJobCommand
+    echo "Job '${jobname}' created in folder '${folder}' with schedule '${schedule}'"
+}
+
+def getJenkinsJobPath(String folder) {
+    if (folder.contains('/')) {
+        // Split the folder path by '/'
+        def parts = folder.split('/')
+        // Join the parts with '/job/' in between
+        return parts.collect { "job/${it}" }.join('/')
+    } else {
+        // If there's no '/', just return "job/folder"
+        return "job/${folder}"
+    }
+}
