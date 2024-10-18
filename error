@@ -1,50 +1,51 @@
-2024-10-17 20:15:32.549  Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-2024-10-17 20:15:32.549  Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-2024-10-17 20:15:32.550  Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
-2024-10-17 20:15:32.575  The recommended git tool is: NONE
-2024-10-17 20:15:32.575  using credential ps590443_token
-2024-10-17 20:15:32.609   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
-2024-10-17 20:15:32.641  Fetching changes from the remote Git repository
-2024-10-17 20:15:32.664   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
-2024-10-17 20:15:32.703  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
-2024-10-17 20:15:32.703   > git --version # timeout=10
-2024-10-17 20:15:32.710   > git --version # 'git version 2.39.2'
-2024-10-17 20:15:32.710  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 20:15:32.795   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-2024-10-17 20:15:33.377   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-2024-10-17 20:15:33.406  Checking out Revision d3e683f0d9c6c7a2e87abbe7ff2dd6ed6af2a7ca (refs/remotes/origin/main)
-2024-10-17 20:15:33.406   > git config core.sparsecheckout # timeout=10
-2024-10-17 20:15:33.419   > git checkout -f d3e683f0d9c6c7a2e87abbe7ff2dd6ed6af2a7ca # timeout=10
-2024-10-17 20:15:33.568  Commit message: "Create dbiusameacd2003.yaml"
-2024-10-17 20:15:33.571   > git rev-list --no-walk 77b9d45f296ad0f102fc9beae4e55fda963e75c5 # timeout=10
-2024-10-17 20:15:33.726  org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
-2024-10-17 20:15:33.726  WorkflowScript: 1: expecting EOF, found 'for' @ line 1, column 14.
-2024-10-17 20:15:33.726     Jenkins-code for rds reboot
-2024-10-17 20:15:33.726                  ^
-2024-10-17 20:15:33.726  
-2024-10-17 20:15:33.726  1 error
-2024-10-17 20:15:33.726  
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:149)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:119)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:131)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:349)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:225)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:191)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:233)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:189)
-2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:966)
-2024-10-17 20:15:33.727  	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:626)
-2024-10-17 20:15:33.727  	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:602)
-2024-10-17 20:15:33.727  	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:579)
-2024-10-17 20:15:33.727  	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:323)
-2024-10-17 20:15:33.727  	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:293)
-2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox$Scope.parse(GroovySandbox.java:163)
-2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:190)
-2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:175)
-2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:635)
-2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:581)
-2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:335)
-2024-10-17 20:15:33.727  	at hudson.model.ResourceController.execute(ResourceController.java:101)
-2024-10-17 20:15:33.727  	at hudson.model.Executor.run(Executor.java:442)
-2024-10-17 20:15:33.811  Finished: FAILURE
+@Library('shared-library') _  // Use this for shared libraries
+
+pipeline {
+    agent {
+        node {
+           label 'docker-build-aws'
+        }
+    }
+    environment {
+        JENKINS_TOKEN = credentials("pavani_jenkins_api_token")
+    }
+    stages {
+        stage('Read YAML') {
+            steps {
+                script {
+                    def filenames = getFileNames("User_Inputs/RestartRDS")
+                    echo "YAML files found: ${filenames}"
+
+                    filenames.each { yamlFilePath ->
+
+                        // Debugging: Output the full contents of the YAML file
+                        def yamlContent = readYaml(file: yamlFilePath)
+                        echo "YAML file content: ${yamlContent}"
+
+                        // Assuming extractSchedule reads the same data
+                        def result = extractSchedule(yamlFilePath)
+                        echo "Extracted result: ${result}"
+
+                        def database_name = result?.db_name ?: "null"
+                        def schedule = result?.schedule ?: "null"
+
+                        // Debugging: Output extracted values
+                        echo "Database name: ${database_name}, Schedule: ${schedule}"
+
+                        // Ensure variables are not null
+                        if (database_name == "null") {
+                            error("Database name is missing in the YAML file: ${yamlFilePath}")
+                        }
+
+                        if (schedule == "null") {
+                            error("Schedule is missing in the YAML file: ${yamlFilePath}")
+                        }
+
+                        // Proceed with job creation
+                        createJob(schedule, "GHSSelfServicePlatform/AWS-RDS-Restart", "${database_name}-restart-schedule", JENKINS_TOKEN_USR, JENKINS_TOKEN_PSW)
+                    }
+                }
+            }
+        }
+    }
+}
