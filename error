@@ -1,158 +1,158 @@
-2024-10-17 18:58:24.291  Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-2024-10-17 18:58:24.291  Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
-2024-10-17 18:58:24.292  Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
-2024-10-17 18:58:24.314  The recommended git tool is: NONE
-2024-10-17 18:58:24.314  using credential ps590443_token
-2024-10-17 18:58:24.343   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
-2024-10-17 18:58:24.365  Fetching changes from the remote Git repository
-2024-10-17 18:58:24.387   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
-2024-10-17 18:58:24.423  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
-2024-10-17 18:58:24.423   > git --version # timeout=10
-2024-10-17 18:58:24.447   > git --version # 'git version 2.39.2'
-2024-10-17 18:58:24.447  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:58:24.524   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-2024-10-17 18:58:25.033   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-2024-10-17 18:58:25.053  Checking out Revision 0c61d14f3ed0bf7fb77f948713ea296ec19ff634 (refs/remotes/origin/main)
-2024-10-17 18:58:25.053   > git config core.sparsecheckout # timeout=10
-2024-10-17 18:58:25.065   > git checkout -f 0c61d14f3ed0bf7fb77f948713ea296ec19ff634 # timeout=10
-2024-10-17 18:58:25.196  Commit message: "Update Platform-SelfService.Jenkinsfile"
-2024-10-17 18:58:25.199   > git rev-list --no-walk 99125a0fbb8b296af99f8532ec9e555b50554062 # timeout=10
-2024-10-17 18:58:25.340  Loading library shared-library@rds-restart
-2024-10-17 18:58:25.341  Attempting to resolve rds-restart from remote references...
-2024-10-17 18:58:25.341   > git --version # timeout=10
-2024-10-17 18:58:25.363   > git --version # 'git version 2.39.2'
-2024-10-17 18:58:25.364  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:58:25.370   > git ls-remote -h -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
-2024-10-17 18:58:25.520  Found match: refs/heads/rds-restart revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc
-2024-10-17 18:58:25.544  The recommended git tool is: NONE
-2024-10-17 18:58:25.544  using credential ps590443_token
-2024-10-17 18:58:25.572   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@libs/65c1208ccf758665cbba85a4466820bb0255f980af8470c3b7cf4cd5d1aeebbb/.git # timeout=10
-2024-10-17 18:58:25.582  Fetching changes from the remote Git repository
-2024-10-17 18:58:25.605   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
-2024-10-17 18:58:25.643  Fetching without tags
-2024-10-17 18:58:25.643  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git
-2024-10-17 18:58:25.643   > git --version # timeout=10
-2024-10-17 18:58:25.651   > git --version # 'git version 2.39.2'
-2024-10-17 18:58:25.651  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:58:25.725   > git fetch --no-tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-2024-10-17 18:58:26.001  Checking out Revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc (rds-restart)
-2024-10-17 18:58:26.001   > git config core.sparsecheckout # timeout=10
-2024-10-17 18:58:26.013   > git checkout -f 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
-2024-10-17 18:58:26.096  Commit message: "Update extractSchedule.groovy"
-2024-10-17 18:58:26.099   > git rev-list --no-walk 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
-2024-10-17 18:58:26.844  [Pipeline] Start of Pipeline
-2024-10-17 18:58:27.089  [Pipeline] node
-2024-10-17 18:58:27.217  Running on ghs-jenkins-agent-01 in /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
-2024-10-17 18:58:27.244  [Pipeline] {
-2024-10-17 18:58:27.381  [Pipeline] stage
-2024-10-17 18:58:27.407  [Pipeline] { (Declarative: Checkout SCM)
-2024-10-17 18:58:27.535  [Pipeline] checkout
-2024-10-17 18:58:27.597  The recommended git tool is: NONE
-2024-10-17 18:58:27.602  using credential ps590443_token
-2024-10-17 18:58:27.634  Fetching changes from the remote Git repository
-2024-10-17 18:58:27.914  Checking out Revision 0c61d14f3ed0bf7fb77f948713ea296ec19ff634 (refs/remotes/origin/main)
-2024-10-17 18:58:27.923  Commit message: "Update Platform-SelfService.Jenkinsfile"
-2024-10-17 18:58:27.991  [Pipeline] }
-2024-10-17 18:58:28.092  [Pipeline] // stage
-2024-10-17 18:58:28.198  [Pipeline] withEnv
-2024-10-17 18:58:28.223  [Pipeline] {
-2024-10-17 18:58:28.350  [Pipeline] withCredentials
-2024-10-17 18:58:28.401  Masking supported pattern matches of $JENKINS_TOKEN or $JENKINS_TOKEN_PSW
-2024-10-17 18:58:28.428  [Pipeline] {
-2024-10-17 18:58:28.538  [Pipeline] stage
-2024-10-17 18:58:28.563  [Pipeline] { (Read YAML)
-2024-10-17 18:58:27.631   > git rev-parse --resolve-git-dir /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/.git # timeout=10
-2024-10-17 18:58:27.637   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
-2024-10-17 18:58:27.641  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
-2024-10-17 18:58:27.641   > git --version # timeout=10
-2024-10-17 18:58:27.642   > git --version # 'git version 2.43.5'
-2024-10-17 18:58:27.643  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
-2024-10-17 18:58:27.645   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-2024-10-17 18:58:27.912   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-2024-10-17 18:58:27.916   > git config core.sparsecheckout # timeout=10
-2024-10-17 18:58:27.917   > git checkout -f 0c61d14f3ed0bf7fb77f948713ea296ec19ff634 # timeout=10
-2024-10-17 18:58:28.675  [Pipeline] script
-2024-10-17 18:58:28.701  [Pipeline] {
-2024-10-17 18:58:28.859  [Pipeline] sh
-2024-10-17 18:58:29.177  + find User_Inputs/RestartRDS -type f -name '*.yaml' -o -name '*.yml'
-2024-10-17 18:58:29.253  [Pipeline] echo
-2024-10-17 18:58:29.279  YAML files found: [User_Inputs/RestartRDS/dbiusameacd2001.yml, User_Inputs/RestartRDS/test123.yml, User_Inputs/RestartRDS/test234.yml, User_Inputs/RestartRDS/dbiusameacd2002.yaml]
-2024-10-17 18:58:29.430  [Pipeline] sh
-2024-10-17 18:58:29.721  + cat User_Inputs/RestartRDS/dbiusameacd2001.yml
-2024-10-17 18:58:29.800  [Pipeline] sh
-2024-10-17 18:58:30.091  + yq e .schdeule -
-2024-10-17 18:58:30.091  + echo '# Please provide Database name, region and schedule time to reboot.
-2024-10-17 18:58:30.091  # Follow cron job patterns in CST 
-2024-10-17 18:58:30.091  # minute hour day(month) month day(week)
-2024-10-17 18:58:30.091  
-2024-10-17 18:58:30.091  
-2024-10-17 18:58:30.091  ---
-2024-10-17 18:58:30.091  dbname: dbiusameacd2001
-2024-10-17 18:58:30.091  region: us-east-1
-2024-10-17 18:58:30.091  schedule: '\''H 10 15 * *'\'''
-2024-10-17 18:58:30.177  [Pipeline] echo
-2024-10-17 18:58:30.203  Database name: dbiusameacd2001, Schedule: null
-2024-10-17 18:58:30.253  [Pipeline] echo
-2024-10-17 18:58:30.283  Database name: dbiusameacd2001, Schedule: null
-2024-10-17 18:58:30.366  [Pipeline] }
-2024-10-17 18:58:30.511  [Pipeline] // script
-2024-10-17 18:58:30.617  [Pipeline] }
-2024-10-17 18:58:30.756  [Pipeline] // stage
-2024-10-17 18:58:30.835  [Pipeline] }
-2024-10-17 18:58:30.967  [Pipeline] // withCredentials
-2024-10-17 18:58:31.048  [Pipeline] }
-2024-10-17 18:58:31.174  [Pipeline] // withEnv
-2024-10-17 18:58:31.259  [Pipeline] }
-2024-10-17 18:58:31.415  [Pipeline] // node
-2024-10-17 18:58:31.551  [Pipeline] End of Pipeline
-2024-10-17 18:58:31.807  Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 6d1de316-f468-4ae6-9e92-d40c0c942191
-2024-10-17 18:58:31.807  hudson.remoting.ProxyException: groovy.lang.MissingPropertyException: No such property: databaseName for class: WorkflowScript
-2024-10-17 18:58:31.808  	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:66)
-2024-10-17 18:58:31.808  	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.getProperty(ScriptBytecodeAdapter.java:471)
-2024-10-17 18:58:31.808  	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:377)
-2024-10-17 18:58:31.808  	at org.kohsuke.groovy.sandbox.GroovyInterceptor.onGetProperty(GroovyInterceptor.java:68)
-2024-10-17 18:58:31.808  	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onGetProperty(SandboxInterceptor.java:347)
-2024-10-17 18:58:31.808  	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:375)
-2024-10-17 18:58:31.808  	at org.kohsuke.groovy.sandbox.impl.Checker.checkedGetProperty(Checker.java:379)
-2024-10-17 18:58:31.808  	at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.getProperty(SandboxInvoker.java:29)
-2024-10-17 18:58:31.808  	at org.jenkinsci.plugins.workflow.cps.LoggingInvoker.getProperty(LoggingInvoker.java:121)
-2024-10-17 18:58:31.808  	at com.cloudbees.groovy.cps.impl.PropertyAccessBlock.rawGet(PropertyAccessBlock.java:20)
-2024-10-17 18:58:31.808  	at WorkflowScript.createJob(WorkflowScript:42)
-2024-10-17 18:58:31.808  	at WorkflowScript.run(WorkflowScript:26)
-2024-10-17 18:58:31.808  	at com.cloudbees.groovy.cps.CpsDefaultGroovyMethods.each(CpsDefaultGroovyMethods:2125)
-2024-10-17 18:58:31.808  	at com.cloudbees.groovy.cps.CpsDefaultGroovyMethods.each(CpsDefaultGroovyMethods:1980)
-2024-10-17 18:58:31.808  	at WorkflowScript.run(WorkflowScript:19)
-2024-10-17 18:58:31.808  	at ___cps.transform___(Native Method)
-2024-10-17 18:58:31.808  	at com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:73)
-2024-10-17 18:58:31.808  	at com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)
-2024-10-17 18:58:31.808  	at com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:65)
-2024-10-17 18:58:31.808  	at jdk.internal.reflect.GeneratedMethodAccessor301.invoke(Unknown Source)
-2024-10-17 18:58:31.808  	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-2024-10-17 18:58:31.808  	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
-2024-10-17 18:58:31.809  	at com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)
-2024-10-17 18:58:31.809  	at com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)
-2024-10-17 18:58:31.809  	at com.cloudbees.groovy.cps.Next.step(Next.java:83)
-2024-10-17 18:58:31.809  	at com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:147)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:17)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:49)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:180)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:423)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:331)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:295)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$wrap$4(CpsVmExecutorService.java:136)
-2024-10-17 18:58:31.809  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-2024-10-17 18:58:31.809  	at hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:139)
-2024-10-17 18:58:31.809  	at jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)
-2024-10-17 18:58:31.809  	at jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:68)
-2024-10-17 18:58:31.809  	at jenkins.util.ErrorLoggingExecutorService.lambda$wrap$0(ErrorLoggingExecutorService.java:51)
-2024-10-17 18:58:31.809  	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-2024-10-17 18:58:31.809  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-2024-10-17 18:58:31.809  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-2024-10-17 18:58:31.809  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$1.call(CpsVmExecutorService.java:53)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$1.call(CpsVmExecutorService.java:50)
-2024-10-17 18:58:31.809  	at org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:136)
-2024-10-17 18:58:31.809  	at org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:275)
-2024-10-17 18:58:31.809  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$categoryThreadFactory$0(CpsVmExecutorService.java:50)
-2024-10-17 18:58:31.809  	at java.base/java.lang.Thread.run(Unknown Source)
-2024-10-17 18:58:31.889  Finished: FAILURE
+2024-10-17 19:03:57.750  Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+2024-10-17 19:03:57.750  Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+2024-10-17 19:03:57.750  Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
+2024-10-17 19:03:57.774  The recommended git tool is: NONE
+2024-10-17 19:03:57.774  using credential ps590443_token
+2024-10-17 19:03:57.803   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
+2024-10-17 19:03:57.840  Fetching changes from the remote Git repository
+2024-10-17 19:03:57.863   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
+2024-10-17 19:03:57.902  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
+2024-10-17 19:03:57.902   > git --version # timeout=10
+2024-10-17 19:03:57.909   > git --version # 'git version 2.39.2'
+2024-10-17 19:03:57.909  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 19:03:57.986   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+2024-10-17 19:03:58.530   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+2024-10-17 19:03:58.549  Checking out Revision ead9c839c554b74056a444adb7fbf8d941360e8f (refs/remotes/origin/main)
+2024-10-17 19:03:58.549   > git config core.sparsecheckout # timeout=10
+2024-10-17 19:03:58.561   > git checkout -f ead9c839c554b74056a444adb7fbf8d941360e8f # timeout=10
+2024-10-17 19:03:58.693  Commit message: "Update dbiusameacd2002.yaml"
+2024-10-17 19:03:58.696   > git rev-list --no-walk 0c61d14f3ed0bf7fb77f948713ea296ec19ff634 # timeout=10
+2024-10-17 19:03:58.842  Loading library shared-library@rds-restart
+2024-10-17 19:03:58.842  Attempting to resolve rds-restart from remote references...
+2024-10-17 19:03:58.842   > git --version # timeout=10
+2024-10-17 19:03:58.855   > git --version # 'git version 2.39.2'
+2024-10-17 19:03:58.855  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 19:03:58.862   > git ls-remote -h -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
+2024-10-17 19:03:59.010  Found match: refs/heads/rds-restart revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc
+2024-10-17 19:03:59.034  The recommended git tool is: NONE
+2024-10-17 19:03:59.034  using credential ps590443_token
+2024-10-17 19:03:59.064   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@libs/65c1208ccf758665cbba85a4466820bb0255f980af8470c3b7cf4cd5d1aeebbb/.git # timeout=10
+2024-10-17 19:03:59.075  Fetching changes from the remote Git repository
+2024-10-17 19:03:59.100   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git # timeout=10
+2024-10-17 19:03:59.138  Fetching without tags
+2024-10-17 19:03:59.138  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git
+2024-10-17 19:03:59.138   > git --version # timeout=10
+2024-10-17 19:03:59.146   > git --version # 'git version 2.39.2'
+2024-10-17 19:03:59.146  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 19:03:59.229   > git fetch --no-tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/jenkins-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+2024-10-17 19:03:59.511  Checking out Revision 7b08a05cd9f1456b5078b6f808d95b99da4f19bc (rds-restart)
+2024-10-17 19:03:59.511   > git config core.sparsecheckout # timeout=10
+2024-10-17 19:03:59.522   > git checkout -f 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
+2024-10-17 19:03:59.609  Commit message: "Update extractSchedule.groovy"
+2024-10-17 19:03:59.611   > git rev-list --no-walk 7b08a05cd9f1456b5078b6f808d95b99da4f19bc # timeout=10
+2024-10-17 19:04:00.365  [Pipeline] Start of Pipeline
+2024-10-17 19:04:00.613  [Pipeline] node
+2024-10-17 19:04:00.739  Running on ghs-jenkins-agent-01 in /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins
+2024-10-17 19:04:00.766  [Pipeline] {
+2024-10-17 19:04:00.901  [Pipeline] stage
+2024-10-17 19:04:00.927  [Pipeline] { (Declarative: Checkout SCM)
+2024-10-17 19:04:01.062  [Pipeline] checkout
+2024-10-17 19:04:01.123  The recommended git tool is: NONE
+2024-10-17 19:04:01.128  using credential ps590443_token
+2024-10-17 19:04:01.162  Fetching changes from the remote Git repository
+2024-10-17 19:04:01.413  Checking out Revision ead9c839c554b74056a444adb7fbf8d941360e8f (refs/remotes/origin/main)
+2024-10-17 19:04:01.422  Commit message: "Update dbiusameacd2002.yaml"
+2024-10-17 19:04:01.490  [Pipeline] }
+2024-10-17 19:04:01.596  [Pipeline] // stage
+2024-10-17 19:04:01.700  [Pipeline] withEnv
+2024-10-17 19:04:01.726  [Pipeline] {
+2024-10-17 19:04:01.856  [Pipeline] withCredentials
+2024-10-17 19:04:01.911  Masking supported pattern matches of $JENKINS_TOKEN or $JENKINS_TOKEN_PSW
+2024-10-17 19:04:01.938  [Pipeline] {
+2024-10-17 19:04:02.055  [Pipeline] stage
+2024-10-17 19:04:02.090  [Pipeline] { (Read YAML)
+2024-10-17 19:04:01.158   > git rev-parse --resolve-git-dir /home/CloudAdmin/Jenkins/workspace/GHSSelfServicePlatform/rds-restart-jenkins/.git # timeout=10
+2024-10-17 19:04:01.167   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
+2024-10-17 19:04:01.170  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
+2024-10-17 19:04:01.170   > git --version # timeout=10
+2024-10-17 19:04:01.172   > git --version # 'git version 2.43.5'
+2024-10-17 19:04:01.172  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 19:04:01.174   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+2024-10-17 19:04:01.411   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+2024-10-17 19:04:01.415   > git config core.sparsecheckout # timeout=10
+2024-10-17 19:04:01.416   > git checkout -f ead9c839c554b74056a444adb7fbf8d941360e8f # timeout=10
+2024-10-17 19:04:02.207  [Pipeline] script
+2024-10-17 19:04:02.234  [Pipeline] {
+2024-10-17 19:04:02.371  [Pipeline] sh
+2024-10-17 19:04:02.688  + find User_Inputs/RestartRDS -type f -name '*.yaml' -o -name '*.yml'
+2024-10-17 19:04:02.768  [Pipeline] echo
+2024-10-17 19:04:02.794  YAML files found: [User_Inputs/RestartRDS/dbiusameacd2001.yml, User_Inputs/RestartRDS/test123.yml, User_Inputs/RestartRDS/test234.yml, User_Inputs/RestartRDS/dbiusameacd2002.yaml]
+2024-10-17 19:04:02.902  [Pipeline] sh
+2024-10-17 19:04:03.197  + cat User_Inputs/RestartRDS/dbiusameacd2001.yml
+2024-10-17 19:04:03.275  [Pipeline] sh
+2024-10-17 19:04:03.569  + yq e .schdeule -
+2024-10-17 19:04:03.569  + echo '# Please provide Database name, region and schedule time to reboot.
+2024-10-17 19:04:03.569  # Follow cron job patterns in CST 
+2024-10-17 19:04:03.569  # minute hour day(month) month day(week)
+2024-10-17 19:04:03.569  
+2024-10-17 19:04:03.569  
+2024-10-17 19:04:03.569  ---
+2024-10-17 19:04:03.569  dbname: dbiusameacd2001
+2024-10-17 19:04:03.570  region: us-east-1
+2024-10-17 19:04:03.570  schedule: '\''H 10 15 * *'\'''
+2024-10-17 19:04:03.646  [Pipeline] echo
+2024-10-17 19:04:03.674  Database name: dbiusameacd2001, Schedule: null
+2024-10-17 19:04:03.726  [Pipeline] echo
+2024-10-17 19:04:03.752  Database name: dbiusameacd2001, Schedule: null
+2024-10-17 19:04:03.839  [Pipeline] }
+2024-10-17 19:04:03.973  [Pipeline] // script
+2024-10-17 19:04:04.076  [Pipeline] }
+2024-10-17 19:04:04.206  [Pipeline] // stage
+2024-10-17 19:04:04.285  [Pipeline] }
+2024-10-17 19:04:04.414  [Pipeline] // withCredentials
+2024-10-17 19:04:04.492  [Pipeline] }
+2024-10-17 19:04:04.621  [Pipeline] // withEnv
+2024-10-17 19:04:04.702  [Pipeline] }
+2024-10-17 19:04:04.853  [Pipeline] // node
+2024-10-17 19:04:04.986  [Pipeline] End of Pipeline
+2024-10-17 19:04:05.250  Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: f9133c9b-11cf-4d05-ab10-d5ba4284af0b
+2024-10-17 19:04:05.250  hudson.remoting.ProxyException: groovy.lang.MissingPropertyException: No such property: databaseName for class: WorkflowScript
+2024-10-17 19:04:05.250  	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:66)
+2024-10-17 19:04:05.250  	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.getProperty(ScriptBytecodeAdapter.java:471)
+2024-10-17 19:04:05.250  	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:377)
+2024-10-17 19:04:05.250  	at org.kohsuke.groovy.sandbox.GroovyInterceptor.onGetProperty(GroovyInterceptor.java:68)
+2024-10-17 19:04:05.250  	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onGetProperty(SandboxInterceptor.java:347)
+2024-10-17 19:04:05.250  	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:375)
+2024-10-17 19:04:05.250  	at org.kohsuke.groovy.sandbox.impl.Checker.checkedGetProperty(Checker.java:379)
+2024-10-17 19:04:05.250  	at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.getProperty(SandboxInvoker.java:29)
+2024-10-17 19:04:05.250  	at org.jenkinsci.plugins.workflow.cps.LoggingInvoker.getProperty(LoggingInvoker.java:121)
+2024-10-17 19:04:05.250  	at com.cloudbees.groovy.cps.impl.PropertyAccessBlock.rawGet(PropertyAccessBlock.java:20)
+2024-10-17 19:04:05.250  	at WorkflowScript.createJob(WorkflowScript:46)
+2024-10-17 19:04:05.250  	at WorkflowScript.run(WorkflowScript:30)
+2024-10-17 19:04:05.250  	at com.cloudbees.groovy.cps.CpsDefaultGroovyMethods.each(CpsDefaultGroovyMethods:2125)
+2024-10-17 19:04:05.250  	at com.cloudbees.groovy.cps.CpsDefaultGroovyMethods.each(CpsDefaultGroovyMethods:1980)
+2024-10-17 19:04:05.250  	at WorkflowScript.run(WorkflowScript:19)
+2024-10-17 19:04:05.250  	at ___cps.transform___(Native Method)
+2024-10-17 19:04:05.250  	at com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:73)
+2024-10-17 19:04:05.250  	at com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)
+2024-10-17 19:04:05.250  	at com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:65)
+2024-10-17 19:04:05.250  	at jdk.internal.reflect.GeneratedMethodAccessor301.invoke(Unknown Source)
+2024-10-17 19:04:05.251  	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2024-10-17 19:04:05.251  	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+2024-10-17 19:04:05.251  	at com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)
+2024-10-17 19:04:05.251  	at com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)
+2024-10-17 19:04:05.251  	at com.cloudbees.groovy.cps.Next.step(Next.java:83)
+2024-10-17 19:04:05.251  	at com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:147)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:17)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:49)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:180)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:423)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:331)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:295)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$wrap$4(CpsVmExecutorService.java:136)
+2024-10-17 19:04:05.251  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+2024-10-17 19:04:05.251  	at hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:139)
+2024-10-17 19:04:05.251  	at jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)
+2024-10-17 19:04:05.251  	at jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:68)
+2024-10-17 19:04:05.251  	at jenkins.util.ErrorLoggingExecutorService.lambda$wrap$0(ErrorLoggingExecutorService.java:51)
+2024-10-17 19:04:05.251  	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+2024-10-17 19:04:05.251  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+2024-10-17 19:04:05.251  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+2024-10-17 19:04:05.251  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$1.call(CpsVmExecutorService.java:53)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$1.call(CpsVmExecutorService.java:50)
+2024-10-17 19:04:05.251  	at org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:136)
+2024-10-17 19:04:05.251  	at org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:275)
+2024-10-17 19:04:05.251  	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$categoryThreadFactory$0(CpsVmExecutorService.java:50)
+2024-10-17 19:04:05.251  	at java.base/java.lang.Thread.run(Unknown Source)
+2024-10-17 19:04:05.328  Finished: FAILURE
