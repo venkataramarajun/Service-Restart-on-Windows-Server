@@ -19,14 +19,8 @@ pipeline {
                     filenames.each { yamlFilePath ->
 
                         def result = extractSchedule(yamlFilePath)
-                        echo "Extracted result: ${result}"
-
                         def database_name = result.db_name
                         def schedule = result.schedule
-
-                        if (database_name == null) {
-                            error("db_name is missing or null in the YAML file: ${yamlFilePath}")
-                        }
 
                         echo "Database name: ${database_name}, Schedule: ${schedule}"
                         echo JENKINS_TOKEN_USR
