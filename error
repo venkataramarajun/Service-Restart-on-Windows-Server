@@ -1,29 +1,50 @@
-024-10-17 19:18:16.714      </g>
-2024-10-17 19:18:16.714  </svg></div>
-2024-10-17 19:18:16.714                    About Jenkins
-2024-10-17 19:18:16.714                  </a><div class="jenkins-dropdown__separator"></div><a class="jenkins-dropdown__item" href="https://www.jenkins.io/participate/" rel="noopener noreferrer" target="_blank"><div class="jenkins-dropdown__item__icon"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
-2024-10-17 19:18:16.714  </div>
-2024-10-17 19:18:16.714                  Get involved
-2024-10-17 19:18:16.714                </a><a rel="noopener noreferrer" href="https://www.jenkins.io/" class="jenkins-dropdown__item" target="_blank"><div class="jenkins-dropdown__item__icon"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
-2024-10-17 19:18:16.714  </div>
-2024-10-17 19:18:16.714                  Website
-2024-10-17 19:22:53.174                </a></div></template></div></div></footer></body></html><html>
-2024-10-17 19:22:53.175  <head><title>301 Moved Permanently</title></head>
-2024-10-17 19:22:53.175  <body>
-2024-10-17 19:22:53.175  <center><h1>301 Moved Permanently</h1></center>
-2024-10-17 19:22:53.175  <hr><center>nginx/1.20.2</center>
-2024-10-17 19:22:53.175  </body>
-2024-10-17 19:22:53.175  </html>
-2024-10-17 19:22:53.258  [Pipeline] }
-2024-10-17 19:22:53.421  [Pipeline] // script
-2024-10-17 19:22:53.530  [Pipeline] }
-2024-10-17 19:22:53.665  [Pipeline] // stage
-2024-10-17 19:22:53.747  [Pipeline] }
-2024-10-17 19:22:53.878  [Pipeline] // withCredentials
-2024-10-17 19:22:53.956  [Pipeline] }
-2024-10-17 19:22:54.083  [Pipeline] // withEnv
-2024-10-17 19:22:54.163  [Pipeline] }
-2024-10-17 19:22:54.328  [Pipeline] // node
-2024-10-17 19:22:54.461  [Pipeline] End of Pipeline
-2024-10-17 19:22:54.723  ERROR: script returned exit code 6
-2024-10-17 19:22:54.802  Finished: FAILURE
+2024-10-17 20:15:32.549  Started by user PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+2024-10-17 20:15:32.549  Running as PAVANI_GODUGULURI@CRGL-THIRDPARTY.COM
+2024-10-17 20:15:32.550  Checking out git https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git into /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf to read Platform-SelfService.Jenkinsfile
+2024-10-17 20:15:32.575  The recommended git tool is: NONE
+2024-10-17 20:15:32.575  using credential ps590443_token
+2024-10-17 20:15:32.609   > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GHSSelfServicePlatform/rds-restart-jenkins@script/a629c0d245ba9d0e0a2196e324c159b66ac418d06ba83fb89d719531bcb04aaf/.git # timeout=10
+2024-10-17 20:15:32.641  Fetching changes from the remote Git repository
+2024-10-17 20:15:32.664   > git config remote.origin.url https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git # timeout=10
+2024-10-17 20:15:32.703  Fetching upstream changes from https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git
+2024-10-17 20:15:32.703   > git --version # timeout=10
+2024-10-17 20:15:32.710   > git --version # 'git version 2.39.2'
+2024-10-17 20:15:32.710  using GIT_ASKPASS to set credentials Token based Process account access to Github repos for Cloud Platform team
+2024-10-17 20:15:32.795   > git fetch --tags --force --progress -- https://git.cglcloud.com/IHSCloudPlatform/Platform-SelfService.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+2024-10-17 20:15:33.377   > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+2024-10-17 20:15:33.406  Checking out Revision d3e683f0d9c6c7a2e87abbe7ff2dd6ed6af2a7ca (refs/remotes/origin/main)
+2024-10-17 20:15:33.406   > git config core.sparsecheckout # timeout=10
+2024-10-17 20:15:33.419   > git checkout -f d3e683f0d9c6c7a2e87abbe7ff2dd6ed6af2a7ca # timeout=10
+2024-10-17 20:15:33.568  Commit message: "Create dbiusameacd2003.yaml"
+2024-10-17 20:15:33.571   > git rev-list --no-walk 77b9d45f296ad0f102fc9beae4e55fda963e75c5 # timeout=10
+2024-10-17 20:15:33.726  org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+2024-10-17 20:15:33.726  WorkflowScript: 1: expecting EOF, found 'for' @ line 1, column 14.
+2024-10-17 20:15:33.726     Jenkins-code for rds reboot
+2024-10-17 20:15:33.726                  ^
+2024-10-17 20:15:33.726  
+2024-10-17 20:15:33.726  1 error
+2024-10-17 20:15:33.726  
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:149)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:119)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:131)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:349)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:225)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:191)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:233)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:189)
+2024-10-17 20:15:33.726  	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:966)
+2024-10-17 20:15:33.727  	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:626)
+2024-10-17 20:15:33.727  	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:602)
+2024-10-17 20:15:33.727  	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:579)
+2024-10-17 20:15:33.727  	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:323)
+2024-10-17 20:15:33.727  	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:293)
+2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox$Scope.parse(GroovySandbox.java:163)
+2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:190)
+2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:175)
+2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:635)
+2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:581)
+2024-10-17 20:15:33.727  	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:335)
+2024-10-17 20:15:33.727  	at hudson.model.ResourceController.execute(ResourceController.java:101)
+2024-10-17 20:15:33.727  	at hudson.model.Executor.run(Executor.java:442)
+2024-10-17 20:15:33.811  Finished: FAILURE
